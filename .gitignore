@@ -30,3 +30,106 @@
 *.exe
 *.out
 *.app
+### —— 通用 OS 隐藏文件 ———————————
+.DS_Store
+Thumbs.db
+
+### —— 编译产物（跨平台） ———————————
+# 目标文件 / 库 / 可执行
+*.o
+*.obj
+*.lo
+*.a
+*.la
+*.so
+*.so.*      # Linux 动态库
+*.dll
+*.dylib     # macOS 动态库
+*.exe
+*.out
+*.app
+*.elf
+*.map
+*.pdb       # MSVC 调试符号
+*.ilk
+*.idb
+*.dsym/     # Xcode dSYM 包
+
+### —— CMake 生成目录 ——（自定义 build*/cmake-build-*）
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+install_manifest.txt
+_deps/
+
+### —— Meson / Ninja ———————————
+meson-logs/
+meson-private/
+*.ninja
+.ninja_deps
+.ninja_log
+
+### —— Autotools ———————————
+/config.guess
+/config.log
+/config.status
+/autom4te.cache/
+aclocal.m4
+compile
+configure
+depcomp
+install-sh
+ltmain.sh
+missing
+
+### —— Visual Studio / MSVC —————————
+.vs/
+*.vcxproj*
+*.sln
+ipch/
+*.opensdf
+*.sdf
+*.VC.db
+bin/
+obj/
+
+### —— Xcode ———————————
+*.xcuserdatad
+*.xcworkspace
+DerivedData/
+
+### —— CLion / IntelliJ IDEA —— 
+.idea/
+
+### —— VS Code ———————————
+.vscode/
+
+### —— QtCreator ———————————
+*.autosave
+*.pro.user*
+*.qmake.stash
+
+### —— Code::Blocks ———————————
+*.depend
+*.layout
+*.layout.save
+
+### —— Gcov / lcov 覆盖率 ———————————
+*.gcda
+*.gcno
+*.gcov
+*.lcov
+
+### —— Ccache / Collected 编译缓存 ————
+.ccache/
+
+### —— 其他临时文件 ———————————
+*.log
+*.tmp
+*.swp
+*.swo
+*~
