@@ -2,20 +2,17 @@ cmake_minimum_required(VERSION 3.14)
 project(web)
 set(CMAKE_CXX_STANDARD 17)
 
-include(FetchContent)
+# 把 cmake/ 目录加入模块搜索路径
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
-FetchContent_Declare(
-  drogon
-  GIT_REPOSITORY https://github.com/drogonframework/drogon.git
-  GIT_TAG        v1.9.4
+# 引入自定义模块，下载并配置 drogon
+include(FetchDrogon)
+
+
+add_executable(web
+    src/main.cpp
+    src/Logger.h
+    src/controllers/OrderController.h
 )
-
-set(DROGON_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-set(DROGON_BUILD_TEST     OFF CACHE BOOL "" FORCE)
-
-FetchContent_MakeAvailable(drogon)
-
-add_executable(web src/main.cpp)
-
-# ✅ 直接使用 drogon 目标
+target_include_directories(web PRIVATE src)
 target_link_libraries(web PRIVATE drogon)
